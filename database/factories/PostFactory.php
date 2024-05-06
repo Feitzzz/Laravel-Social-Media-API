@@ -18,7 +18,7 @@ class PostFactory extends Factory
         return [
             'caption' => fake()->sentence(20),
             'user_id' => \App\Models\User::factory(),
-            'avatar_path' => fake()->image_url(640 , 480)
+            'avatar_path' => fake()->image_url()
         ];
     }
 }
