@@ -24,6 +24,7 @@ class UserFactory extends Factory
             'email' => fake()->email,
             'username' => fake()->unique()->userName(),
             'password' => bcrypt('password'),
+            'avatar_path' => fake()->image_url(640 , 480)
         ];
     }
 
