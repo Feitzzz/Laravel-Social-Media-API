@@ -62,4 +62,9 @@ class PostController extends Controller
         $this->authorize('delete', $post);
         $post->delete();
     }
+
+    public function like()
+    {
+        return "Checking Out the feature branch";
+    }
 }
