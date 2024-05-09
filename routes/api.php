@@ -4,6 +4,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use \App\Http\Controllers\PostController;
 use \App\Http\Controllers\CommentController;
+use App\Http\Controllers\PostLikeController;
 use \App\Http\Controllers\UserController;
 /*
 |--------------------------------------------------------------------------
@@ -32,4 +33,6 @@ Route::group(['prefix' => 'v1', 'middleware' => 'auth:sanctum'], function() {
     Route::get('users', [UserController::class, 'index']);
     Route::get('users/{user}', [UserController::class, 'show']);
     Route::post('users/logout' , [UserController::class , 'logout']);
+    Route::post('posts/{post}/like', [PostLikeController::class , 'like']);
+    Route::post('posts/{post}/unlike', [PostLikeController::class , 'unlike']);
 });

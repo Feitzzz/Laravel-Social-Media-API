@@ -22,6 +22,7 @@ class PostResource extends JsonResource
             'username' => $this->user->username,
             'comments' => CommentResource::collection($this->comments),
             'numberOfComments' => (string) $this->comments_count,
+            'numberOfLikes' => (string) $this->likes()->count(),
             'imagePath' => asset($this->image_path) === "/" ? null : asset($this->image_path),
             'createdAt' => $this->created_at->format('Y-m-d H:i:s'),
             'updatedAt' => $this->updated_at->format('Y-m-d H:i:s'),
